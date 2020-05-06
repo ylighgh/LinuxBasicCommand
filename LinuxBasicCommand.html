@@ -775,6 +775,17 @@ p { margin-bottom: 1.25rem; }
 <li><a href="#_less">2.5. less</a></li>
 <li><a href="#_wc">2.6. wc</a></li>
 <li><a href="#_date">2.7. date</a></li>
+<li><a href="#_cal">2.8. cal</a></li>
+<li><a href="#_clear">2.9. clear</a></li>
+<li><a href="#_管道">2.10. 管道</a></li>
+</ul>
+</li>
+<li><a href="#高级指令">3. 高级指令</a>
+<ul class="sectlevel2">
+<li><a href="#_hostname">3.1. hostname</a></li>
+<li><a href="#_id">3.2. id</a></li>
+<li><a href="#_whoami">3.3. whoami</a></li>
+<li><a href="#_ps_ef">3.4. ps -ef</a></li>
 </ul>
 </li>
 </ul>
@@ -1319,12 +1330,226 @@ Linux在复制的过程中是可以重新对新位置的文件进行重命名的
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_cal">2.8. cal</h3>
+<div class="paragraph">
+<p>指令：cal 选项</p>
+</div>
+<div class="paragraph">
+<p>作用：用来操作日历</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>选项</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>含义</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">直接输出当前月份的日历</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">表示输出上一个月+本月+下个月的日历</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-y 年份</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">表示输出某一个年份的日历</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_clear">2.9. clear</h3>
+<div class="paragraph">
+<p>指令：clear（Ctrl+L）</p>
+</div>
+<div class="paragraph">
+<p>作用：清除终端中已经存在的命令和结果（信息）</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+需要注意的是，该命令并不是真的清楚了之前的信息，而是把之前的信息隐藏到了最上面，通过滚动条继续查看以前的信息
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_管道">2.10. 管道</h3>
+<div class="paragraph">
+<p><strong>管道符：|</strong></p>
+</div>
+<div class="paragraph">
+<p>作用：管道一般可以用于“<strong>过滤</strong>”，“特殊”，“扩展处理”</p>
+</div>
+<div class="paragraph">
+<p>语法：管道不能单独使用，必须配合前面的指令一起使用，其作用主要是辅助作用</p>
+</div>
+<div class="paragraph">
+<p>过滤案例：需要通过管道查询出"/"(根目录)下包含"y"字母的文档名称</p>
+</div>
+<div class="paragraph">
+<p><code>ls / | grep y</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/管道作用(过滤)-1.png" alt="管道作用(过滤) 1">
+</div>
+</div>
+<div class="paragraph">
+<p>针对上面这个命令说明：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>以管道作为分界线，<strong>前面的命令有个输出，后面需要先输入，然后再过滤，最后再输出，通俗的讲就是管道前面的输出就是后面指令的输入</strong></p>
+</li>
+<li>
+<p>grep指令：<strong>主要用于过滤</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>拓展案例：请使用学过的命令，来统计某个目录下的文档的总个数</p>
+</div>
+<div class="paragraph">
+<p><code>ls | wc -l</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/管道作用(拓展)-2.png" alt="管道作用(拓展) 2">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="高级指令">3. 高级指令</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_hostname">3.1. hostname</h3>
+<div class="paragraph">
+<p>指令：hostname 选项</p>
+</div>
+<div class="paragraph">
+<p>含义：表示输出当前完整的主机名</p>
+</div>
+<div class="paragraph">
+<p>作用：操作服务器的 <strong>主机名</strong>（读取）</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>选项</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>含义</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">表示输出当前主机名中的FQDN(全限定域名)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_id">3.2. id</h3>
+<div class="paragraph">
+<p>指令：id 选项</p>
+</div>
+<div class="paragraph">
+<p>作用：查看一个用户的一些基本信息（包含用户id 用户组id 附加组id）该指令如果不指定用户则默认当前目录</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>选项</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>含义</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">用户名</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">显示指定用户的基本信息</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_whoami">3.3. whoami</h3>
+<div class="paragraph">
+<p>指令：whoami</p>
+</div>
+<div class="paragraph">
+<p>作用：显示当前登录的用户名，一般用于shell脚本，用于获取当前操作的用户名去方便记录日志</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ps_ef">3.4. ps -ef</h3>
+<div class="paragraph">
+<p>指令：<code>ps 选项</code></p>
+</div>
+<div class="paragraph">
+<p>作用：主要是查看服务器的进程信息</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>选项</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>含义</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-e</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">表示列出全部的进程</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">表示显示全部的列（显示全字段）</p></td>
+</tr>
+</tbody>
+</table>
+<div class="imageblock">
+<div class="content">
+<img src="images/ps-ef.png" alt="ps ef">
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">UID：该进行执行的用户id；
+PID：进行id；
+PPID：该进程的父级id，如果一个程序的父级进行找不到，该程序的进程称之为僵尸进程；
+C：表示CPU的占用率，其形式是百分数；
+STIME：该进程的启动时间；
+TTY：终端设备，发起该进程的设备识别符号，如果显示“?”则表示该进程并不是由终端设备发起；
+TIME：表示进程的执行时间；
+CMD：该进程的名称或者对应的路径；</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-05-06 13:19:12 +0800
+Last updated 2020-05-06 15:06:17 +0800
 </div>
 </div>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css">
