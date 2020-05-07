@@ -15,10 +15,10 @@ Gem::Specification.new do |s|
   s.homepage = "https://prawnpdf.org".freeze
   s.licenses = ["Nonstandard".freeze, "GPL-2.0".freeze, "GPL-3.0".freeze]
   s.required_ruby_version = Gem::Requirement.new("~> 2.1".freeze)
-  s.rubygems_version = "3.1.2".freeze
+  s.rubygems_version = "3.1.3".freeze
   s.summary = "TrueType Font Metrics Parser".freeze
 
-  s.installed_by_version = "3.1.2" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.1.3" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4

@@ -15,8 +15,8 @@ Gem::Specification.new do |s|
   s.files = ["README.txt".freeze]
   s.homepage = "http://github.com/cjheath/polyglot".freeze
   s.licenses = ["MIT".freeze]
-  s.rubygems_version = "3.1.2".freeze
+  s.rubygems_version = "3.1.3".freeze
   s.summary = "Augment 'require' to load non-Ruby file types".freeze
 
-  s.installed_by_version = "3.1.2" if s.respond_to? :installed_by_version
+  s.installed_by_version = "3.1.3" if s.respond_to? :installed_by_version
 end
